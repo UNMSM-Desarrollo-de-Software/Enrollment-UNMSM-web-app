@@ -46,7 +46,7 @@ export default function CourseSelectionPage() {
 
   const handleNext = () => {
     if (selectedCourses.length > 0) {
-      setStep('payment_plan')
+      setStep('payment-plan')
       router.push('/enrollment/payment-plan')
     }
   }

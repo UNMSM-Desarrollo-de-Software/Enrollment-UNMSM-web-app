@@ -81,7 +81,7 @@ export default function PaymentPlanPage() {
           <div className="flex justify-between">
             <button
               onClick={() => {
-                setStep('course_selection')
+                setStep('courses')
                 router.push('/enrollment/courses')
               }}
               className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"

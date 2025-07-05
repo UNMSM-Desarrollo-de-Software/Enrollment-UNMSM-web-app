@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 export type EnrollmentStatus = 'enabled' | 'disabled' | 'in_progress' | 'completed'
-export type EnrollmentStep = 'course_selection' | 'payment_plan' | 'terms' | 'payment' | 'confirmation'
+export type EnrollmentStep = 'courses' | 'payment-plan' | 'terms' | 'payment' | 'confirmation'
 
 interface Course {
   id: string
@@ -45,7 +45,7 @@ interface EnrollmentState {
 
 const initialState = {
   status: 'disabled' as EnrollmentStatus,
-  currentStep: 'course_selection' as EnrollmentStep,
+  currentStep: 'courses' as EnrollmentStep,
   selectedCourses: [],
   paymentPlan: null,
   termsAccepted: false,
