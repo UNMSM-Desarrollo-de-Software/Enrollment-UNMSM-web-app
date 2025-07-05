@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import Cookies from 'js-cookie'
 
 interface User {
   code: string
@@ -27,9 +28,11 @@ export const useAuthStore = create<AuthState>()(
           token: 'mock-token'
         }
         set({ user: mockUser, isAuthenticated: true })
+        Cookies.set('auth-storage', 'logged-in', { expires: 7, path: '/' })
       },
       logout: () => {
         set({ user: null, isAuthenticated: false })
+        Cookies.remove('auth-storage', { path: '/' })
       }
     }),
     {
